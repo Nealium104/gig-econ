@@ -19,10 +19,12 @@ export default function Home() {
         <p>This should, in theory, give you a decent record of your income to track for your taxes as well as just keeping you informed about your business.</p>
         <p>I suggest using this calculator on a regular basis so you can see the highs-and-lows yearly of your industry.</p>
         <h2>Click the button below to get started!</h2>
-        <button className='btn bg-black/50 my-5' id='showInputForm' onClick={handleButtonClick}>Get Started</button>
-        <Conditional showWhen={canShow}>
-          <InputForm />
-        </Conditional>
+        <button className='btn bg-black my-5' id='showInputForm' onClick={handleButtonClick}>Get Started</button>
+        <div>
+          <Conditional className="py-4" showWhen={canShow}>
+            <InputForm />
+          </Conditional>
+        </div>
         </div>
     </main>
   )

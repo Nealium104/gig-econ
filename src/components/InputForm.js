@@ -17,8 +17,8 @@ export default function InputForm() {
 
   return (
     <>
-      <div className="flex justify-center">
-        <div className="card w-96 bg-base-200 shadow-xl">
+      <div className="flex justify-center pb-5">
+        <div className="card w-96 bg-black/25 shadow-xl">
           <form className="card-body">
             <h2 className="card-title justify-center">Count your money!</h2>
             <p className="bg-black/50 rounded-lg p-5">Count your number of dollar bills in order. Press tab and watch your total update! Press submit to log the date of your money!</p>
