@@ -17,12 +17,12 @@ module.exports = {
   plugins: [require("daisyui")],
   daisyui: {
     styled: true,
-    themes: ["luxury",],
+    themes: ["dark",],
     base: false,
     utils:true,
     logs: true,
     rtl: false,
     prefix: "",
-    darkTheme: "luxury"
+    darkTheme: "dark"
   }
 }

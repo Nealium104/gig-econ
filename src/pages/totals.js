@@ -43,10 +43,10 @@ export default function Totals () {
                         key={transaction._id}
                         className={index % 2 === 0 ? 'bg-white' : 'bg-gray-50'}
                     >
-                        <td className="border px-4 py-2">{transaction.date.split('T')[0]}</td>
-                        <td className="border px-4 py-2">${transaction.amount}</td>
+                        <td className="border px-4 py-2">{user ? transaction.date.split('T')[0] : "N/a"}</td>
+                        <td className="border px-4 py-2">${user ? transaction.amount : "N/a"}</td>
                         <td className="border px-4 py-2">
-                        {transaction.description || 'No description provided'}
+                        {user ? transaction.description || 'No description provided' : "N/a"}
                         </td>
                     </tr>
                     ))}
@@ -57,3 +57,12 @@ export default function Totals () {
         </>
     )
 }
+
+
+// {isLoading ? (
+//     <span>Authenticating, please wait... 🕒</span>
+//     ) : user ? (
+//     <a href="/api/auth/logout">Logout</a>
+//     ) : (
+//     <a href="/api/auth/login">Login</a>
+//     )}
