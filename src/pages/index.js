@@ -24,7 +24,7 @@ export default function Home() {
       <div className='w-1/2'>
       </div>
       <div className="max-width-l text-center">
-        <h1 className="text-5xl my-5 text-center">Hi, {user.name} welcome to the money counter.</h1>
+        <h1 className="text-5xl my-5 text-center">Hi, {user ? user.name : 'Guest'} welcome to the money counter.</h1>
         <p>This is a website where you can track income of your cash only jobs (like serving or performing music) and see your total money, as well as the date of your input.</p>
         <p>This should, in theory, give you a decent record of your income to track for your taxes as well as just keeping you informed about your business.</p>
         <p>I suggest using this calculator on a regular basis so you can see the highs-and-lows yearly of your industry.</p>
