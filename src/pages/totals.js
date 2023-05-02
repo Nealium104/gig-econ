@@ -15,11 +15,13 @@ export default function Totals () {
     const sid = user ? user.sub : null;
 
     useEffect(() => {
-      const userId = sid; // Replace this with the actual user ID from your 0auth.
-      fetchTransactions(userId).then((fetchedTransactions) => {
-        setTransactions(fetchedTransactions);
-      });
-    }, []);
+        if (user) {
+          const userId = user.sub; // Replace this with the actual user ID from your 0auth.
+          fetchTransactions(userId).then((fetchedTransactions) => {
+            setTransactions(fetchedTransactions);
+          });
+        }
+      }, [user]);
     
     return (
         <>
