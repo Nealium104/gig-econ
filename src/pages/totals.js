@@ -23,10 +23,9 @@ export default function Totals () {
         }
       }, [user]);
     
-    return (
-        <>
-        <Nav />
-        <div className="container mx-auto py-6 px-4">
+      function TransactionsTable({ transactions }) {
+        return (
+            <div className="container mx-auto py-6 px-4">
             <h1 className="text-2xl font-semibold mb-6 text-center">Your Transactions</h1>
             <div className="overflow-x-auto">
                 <table className="w-full table-auto text-black">
@@ -54,6 +53,27 @@ export default function Totals () {
                 </table>
             </div>
             </div>
+        );
+      }
+
+    return (
+        <>
+        <Nav />
+        <div className="container mx-auto py-6 px-4">
+        <h1 className="text-2xl font-semibold mb-6 text-center">
+          Your Transactions
+        </h1>
+        <div className="overflow-x-auto">
+          {user ? (
+            // Render the TransactionsTable component and pass the transactions data
+            <TransactionsTable transactions={transactions} />
+          ) : (
+            <p className="text-center text-xl">
+              Please login to view your transactions, amigo! 🚀
+            </p>
+          )}
+        </div>
+      </div>
         </>
     )
 }
