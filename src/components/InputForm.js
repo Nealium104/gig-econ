@@ -109,7 +109,7 @@ export default function InputForm() {
                 <span className="badge p-4 text-xl">${total}</span>
               </div>
               <div className="card-actions justify-end">
-                <button className="btn btn-primary" type="submit">Submit</button>
+                <button className="btn btn-primary" type="submit" disabled={!sid}>Submit</button>
               </div>
             </div>
           </form>

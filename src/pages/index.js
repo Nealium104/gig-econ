@@ -2,13 +2,14 @@ import Nav from '@/components/Nav'
 import InputForm from '@/components/InputForm'
 import Conditional from '@/components/shared/Conditional'
 import { useState } from 'react'
-import Calendar from 'react-calendar'
-import 'react-calendar/dist/Calendar.css';
+import { useUser } from '@auth0/nextjs-auth0/client';
 
 export default function Home() {
   const [canShow, setCanShow] = useState(false)
   const [value, setValue] = useState(new Date());
 
+  const { user, error, isLoading } = useUser()
+  
   function onChange(nextValue) {
     setValue(nextValue);
   }
@@ -23,7 +24,7 @@ export default function Home() {
       <div className='w-1/2'>
       </div>
       <div className="max-width-l text-center">
-        <h1 className="text-5xl my-5 text-center">Welcome to the money counter.</h1>
+        <h1 className="text-5xl my-5 text-center">Hi, {user} welcome to the money counter.</h1>
         <p>This is a website where you can track income of your cash only jobs (like serving or performing music) and see your total money, as well as the date of your input.</p>
         <p>This should, in theory, give you a decent record of your income to track for your taxes as well as just keeping you informed about your business.</p>
         <p>I suggest using this calculator on a regular basis so you can see the highs-and-lows yearly of your industry.</p>
