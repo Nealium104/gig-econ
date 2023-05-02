@@ -1,7 +1,11 @@
 import { useState } from 'react';
+import { useUser } from '@auth0/nextjs-auth0/client';
 
 export default function InputForm() {
   const [total, setTotal] = useState(0);
+
+  const { user } = useUser();
+  const sid = user ? user.sub : null;
 
   const calculateTotal = () => {
     let newTotal = 0;
@@ -15,13 +19,39 @@ export default function InputForm() {
     setTotal(newTotal);
   };
 
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    const description = document.getElementById('description').value;
+    const date = new Date().toISOString().split('T')[0];
+    if (!sid) {
+      console.error('User is not logged in or user information is not available yet');
+      return;
+    }
+
+    await fetch('/api/transactions', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        userId: sid,
+        date,
+        description,
+        amount: total,
+      }),
+    });
+
+    // Clear the form and total, because who doesn't love a fresh start?
+    document.getElementById('transaction-form').reset();
+    setTotal(0);
+  };
+
   return (
     <>
       <div className="flex justify-center pb-5">
         <div className="card w-96 bg-black/25 shadow-xl">
-          <form className="card-body">
+          <form className="card-body" id="transaction-form" onSubmit={handleSubmit}>
             <h2 className="card-title justify-center">Count your money!</h2>
-            <p className="bg-black/50 rounded-lg p-5">Count your number of dollar bills in order. Press tab and watch your total update! Press submit to log the date of your money!</p>
+            <p className="bg-black/50 rounded-lg p-5">Count your number of dollar bills in order. Press enter and watch your total update! Press submit to log the date of your money!</p>
             <label htmlFor="100">$100</label>
             <input
               type="number"
@@ -70,12 +100,16 @@ export default function InputForm() {
               id="1"
               onBlur={calculateTotal}
             />
+            <div>
+              <h3>Description (optional):</h3>
+              <input type="text" placeholder="Write a short description" className="input input-bordered w-full max-w-xs" id="description" />
+            </div>
             <div className="flex items-center justify-between">
               <div>
                 <span className="badge p-4 text-xl">${total}</span>
               </div>
               <div className="card-actions justify-end">
-                <button className="btn btn-primary">Submit</button>
+                <button className="btn btn-primary" type="submit">Submit</button>
               </div>
             </div>
           </form>
