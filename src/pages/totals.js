@@ -22,6 +22,29 @@ export default function Totals () {
           });
         }
       }, [user]);
+
+      const handleUpdate = async (transactionId, updatedData) => {
+        await fetch('/api/transactions', {
+          method: 'PUT',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ _id: transactionId, ...updatedData }),
+        });
+      };
+
+      const handleEditClick = (transactionId, currentDescription) => {
+        const updatedDescription = prompt('Enter new description:', currentDescription);
+        if (updatedDescription && updatedDescription !== currentDescription) {
+          handleUpdate(transactionId, { description: updatedDescription });
+        }
+      };
+    
+      const handleDelete = async (transactionId) => {
+        await fetch('/api/transactions', {
+          method: 'DELETE',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ _id: transactionId }),
+        });
+      };
     
       function TransactionsTable({ transactions }) {
         return (
@@ -34,6 +57,8 @@ export default function Totals () {
                     <th className="px-4 py-2">Date</th>
                     <th className="px-4 py-2">Amount</th>
                     <th className="px-4 py-2">Description</th>
+                    <th className="px-4 py-2">Edit</th>
+                    <th className="px-4 py-2">Delete</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -46,6 +71,12 @@ export default function Totals () {
                         <td className="border px-4 py-2">${user ? transaction.amount : "N/a"}</td>
                         <td className="border px-4 py-2">
                         {user ? transaction.description || 'No description provided' : "N/a"}
+                        </td>
+                        <td className="border px-4 py-2">
+                          <button onClick={() => handleEditClick(transaction._id, transaction.description)}>Edit</button>
+                        </td>
+                        <td className="border px-4 py-2">
+                          <button onClick={() => handleDelete(transaction._id)}>Delete</button>
                         </td>
                     </tr>
                     ))}
