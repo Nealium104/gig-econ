@@ -1,11 +1,13 @@
 import Nav from '@/components/Nav'
 import InputForm from '@/components/InputForm'
 import Conditional from '@/components/shared/Conditional'
+import Totals from '@/components/Totals'
 import { useState } from 'react'
 import { useUser } from '@auth0/nextjs-auth0/client';
 
 export default function Home() {
   const [canShow, setCanShow] = useState(false)
+  const [canShow2, setCanShow2] = useState(false)
   const [value, setValue] = useState(new Date());
 
   const { user, error, isLoading } = useUser()
@@ -18,6 +20,10 @@ export default function Home() {
     setCanShow(!canShow)
   }
   
+  const handleButtonClick2 = () => {
+    setCanShow2(!canShow2)
+  }
+
   return (
     <main className="bg-neutral">
       <Nav />
@@ -34,9 +40,13 @@ export default function Home() {
           <h2>Click the calculator to just use the calculator, or Login to access your past sessions!</h2>
         </div>
         <button className='btn bg-black my-5' id='showInputForm' onClick={handleButtonClick}>Calculator</button>
+        <button className='btn bg-black my-5' onClick={handleButtonClick2}>Your Logs</button>
         <div>
           <Conditional className="py-4" showWhen={canShow}>
             <InputForm />
+          </Conditional>
+          <Conditional className="py-4" showWhen={canShow2}>
+            <Totals />
           </Conditional>
         </div>
         </div>
