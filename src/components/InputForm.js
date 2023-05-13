@@ -106,7 +106,7 @@ export default function InputForm() {
             </div>
             <div className="flex items-center justify-between">
               <div>
-                <input type="text" placeholder="Edit this line directly if needed" className="badge p-4 text-xl">${total}</input>
+                <span className="badge p-4 text-xl">${total}</span>
                 <button className="btn btn-primary" type="submit" disabled={!sid}>Submit</button>
               </div>
             </div>
