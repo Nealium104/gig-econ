@@ -104,9 +104,18 @@ export default function InputForm() {
               <h3>Description (optional):</h3>
               <input type="text" placeholder="Write a short description" className="input input-bordered w-full max-w-xs" id="description" />
             </div>
-            <div className="flex items-center justify-between">
-              <div>
-                <span className="badge p-4 text-xl">${total}</span>
+            <div className="flex items-center justify-center">
+              <div className='flex flex-col items-center'>
+              <div className='badge p-4 my-4 text-xl' style={{position: 'relative'}}>
+                      <span style={{position: 'absolute', left: '10px', top: '50%', transform: 'translateY(-50%)'}}>$</span>
+                      <input 
+                          className='bg-base-200'
+                          type="number"
+                          value={total}
+                          onChange={event => setTotal(Number(event.target.value))}
+                          style={{paddingLeft: '20px'}}
+                      />
+                  </div>
                 <button className="btn btn-primary" type="submit" disabled={!sid}>Submit</button>
               </div>
             </div>

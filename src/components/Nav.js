@@ -11,8 +11,7 @@ export default function Nav () {
                 <Link href='/' className="btn btn-ghost normal-case text-xl">Freelance Funds!</Link>
             </div>
             <div className="flex">
-                <Link href='/faq/'>FAQ</Link>
-                <Link href="/totals" className="mx-4">Transactions</Link>
+                <Link className='mx-4' href='/faq/'>FAQ</Link>
                 {isLoading ? (
                     <span>Authenticating...</span>
                     ) : user ? (
