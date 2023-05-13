@@ -1,4 +1,3 @@
-import Nav from "@/components/Nav"
 import { useState, useEffect } from "react";
 import { useUser } from '@auth0/nextjs-auth0/client';
 
@@ -108,11 +107,3 @@ export default function Totals () {
     )
 }
 
-
-// {isLoading ? (
-//     <span>Authenticating, please wait... 🕒</span>
-//     ) : user ? (
-//     <a href="/api/auth/logout">Logout</a>
-//     ) : (
-//     <a href="/api/auth/login">Login</a>
-//     )}

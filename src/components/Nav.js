@@ -11,9 +11,10 @@ export default function Nav () {
                 <Link href='/' className="btn btn-ghost normal-case text-xl">Freelance Funds!</Link>
             </div>
             <div className="flex">
+                <Link href='/faq/'>FAQ</Link>
                 <Link href="/totals" className="mx-4">Transactions</Link>
                 {isLoading ? (
-                    <span>Authenticating, please wait... 🕒</span>
+                    <span>Authenticating...</span>
                     ) : user ? (
                     <a href="/api/auth/logout">Logout</a>
                     ) : (
