@@ -3,6 +3,7 @@ import InputForm from '@/components/InputForm'
 import Footer from '@/components/Footer'
 import Conditional from '@/components/shared/Conditional'
 import Totals from '@/components/Totals'
+import Groups from '@/components/Groups'
 import { useState } from 'react'
 import { useUser } from '@auth0/nextjs-auth0/client';
 
