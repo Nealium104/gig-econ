@@ -49,9 +49,9 @@ export default function Totals () {
         return (
             <div className="container table mx-auto py-6 px-4">
             <div className="overflow-x-auto">
-                <table className="w-full table-auto text-black">
+                <table className="w-full table-auto text-white">
                 <thead>
-                    <tr className="text-gray-700 bg-gray-100">
+                    <tr className="text-white bg-black/75">
                     <th className="px-4 py-2">Date</th>
                     <th className="px-4 py-2">Amount</th>
                     <th className="px-4 py-2">Description</th>
