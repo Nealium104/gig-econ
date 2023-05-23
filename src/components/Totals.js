@@ -15,7 +15,7 @@ export default function Totals () {
 
     useEffect(() => {
         if (user) {
-          const userId = user.sub; // Replace this with the actual user ID from your 0auth.
+          const userId = user.sub;
           fetchTransactions(userId).then((fetchedTransactions) => {
             setTransactions(fetchedTransactions);
           });
@@ -30,12 +30,16 @@ export default function Totals () {
         });
       };
 
-      const handleEditClick = (transactionId, currentDescription) => {
+      const handleEditClick = (transactionId, currentDescription, currentAmount) => {
         const updatedDescription = prompt('Enter new description:', currentDescription);
-        if (updatedDescription && updatedDescription !== currentDescription) {
-          handleUpdate(transactionId, { description: updatedDescription });
+        const updatedAmount = prompt('Enter the updated amount', currentAmount);
+        
+        if ((updatedDescription && updatedDescription !== currentDescription) ||
+            (updatedAmount && updatedAmount !== currentAmount)) {
+          handleUpdate(transactionId, { description: updatedDescription, amount: updatedAmount });
         }
       };
+      
     
       const handleDelete = async (transactionId) => {
         await fetch('/api/transactions', {
@@ -71,7 +75,7 @@ export default function Totals () {
                         {user ? transaction.description || 'No description provided' : "N/a"}
                         </td>
                         <td className="border px-4 py-2">
-                          <button onClick={() => handleEditClick(transaction._id, transaction.description)}>Edit</button>
+                        <button onClick={() => handleEditClick(transaction._id, transaction.description, transaction.amount)}>Edit</button>
                         </td>
                         <td className="border px-4 py-2">
                           <button onClick={() => handleDelete(transaction._id)}>Delete</button>
