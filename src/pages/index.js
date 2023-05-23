@@ -18,7 +18,7 @@ export default function Home() {
   const [value, setValue] = useState(new Date());
   const { user, error, isLoading } = useUser()
 
-  const sid = user ? user.sub : '';
+  // const username = user ? user.name : '';
 
   function onChange(nextValue) {
     setValue(nextValue);
@@ -32,8 +32,8 @@ export default function Home() {
     <main className="bg-neutral h-screen w-screen">
       <Nav />
       <div className="max-width-l">
-        <h1 className='text-5xl text-primary font-bold bg-base-100 w-fit p-5 rounded-xl my-5 mx-auto'>{`Welcome ${sid}, to Gig-econ!`}</h1>
-        <div className='max-w-md mx-auto mb-8'>
+        <h1 className='text-5xl text-primary font-bold bg-base-100 w-fit p-5 rounded-xl my-5 mx-auto'>Welcome {user?.name || 'Guest'}, to Gig-Econ!</h1>
+        <div className='max-w-lg mx-auto mb-8'>
           <div className='flex ms-4'>
             <button 
               className={`rounded-t-lg px-4 py-3 mx-1 ${selectedTab === TABS.HOME ? 'bg-base-100' : 'bg-base-300'}`} 

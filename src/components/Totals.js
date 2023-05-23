@@ -28,6 +28,22 @@ export default function Totals () {
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ _id: transactionId, ...updatedData }),
         });
+      
+        // fetch updated transactions
+        const updatedTransactions = await fetchTransactions(user.sub);
+        setTransactions(updatedTransactions);
+      };
+      
+      const handleDelete = async (transactionId) => {
+        await fetch('/api/transactions', {
+          method: 'DELETE',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ _id: transactionId }),
+        });
+      
+        // fetch updated transactions
+        const updatedTransactions = await fetchTransactions(user.sub);
+        setTransactions(updatedTransactions);
       };
 
       const handleEditClick = (transactionId, currentDescription, currentAmount) => {
@@ -38,15 +54,6 @@ export default function Totals () {
             (updatedAmount && updatedAmount !== currentAmount)) {
           handleUpdate(transactionId, { description: updatedDescription, amount: updatedAmount });
         }
-      };
-      
-    
-      const handleDelete = async (transactionId) => {
-        await fetch('/api/transactions', {
-          method: 'DELETE',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ _id: transactionId }),
-        });
       };
     
       function TransactionsTable({ transactions }) {
