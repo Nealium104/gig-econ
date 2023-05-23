@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { useUser } from "@auth0/nextjs-auth0/client";
+import Totals from "./Totals";
 
 export default function Nav () {
     const { user, error, isLoading } = useUser();
@@ -11,6 +12,7 @@ export default function Nav () {
                 <Link href='/' className="btn btn-ghost normal-case text-xl">Freelance Funds!</Link>
             </div>
             <div className="flex">
+                <Link href="/">Dashboard</Link>
                 <Link className='mx-4' href='/faq/'>FAQ</Link>
                 {isLoading ? (
                     <span>Authenticating...</span>
