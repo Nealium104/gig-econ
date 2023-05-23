@@ -71,6 +71,9 @@ export default function Home() {
             <Conditional className="py-4" showWhen={selectedTab === TABS.LOGS}>
               <Totals />
             </Conditional>
+            <Conditional className="py-4" showWhen={selectedTab === TABS.GROUPS}>
+              <Groups />
+            </Conditional>
           </div>
         </div>
       </div>
