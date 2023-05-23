@@ -9,7 +9,7 @@ export default function Nav () {
         <>
         <div className="navbar bg-base-100">
             <div className="flex-1">
-                <Link href='/' className="btn btn-ghost normal-case text-xl">Freelance Funds!</Link>
+                <Link href='/' className="btn btn-ghost normal-case text-xl">Gig-Econ</Link>
             </div>
             <div className="flex">
                 <Link href="/">Dashboard</Link>

@@ -1,6 +1,6 @@
 {
-    "name": "Freelance funds",
-    "short_name": "Freelance Funds",
+    "name": "Gig-Econ",
+    "short_name": "Gig-Econ",
     "start_url": "_app.js",
     "scope": "./",
     "icons": [

@@ -78,7 +78,7 @@ export default function Totals () {
                         <button onClick={() => handleEditClick(transaction._id, transaction.description, transaction.amount)}>Edit</button>
                         </td>
                         <td className="border px-4 py-2">
-                          <button onClick={() => handleDelete(transaction._id)}>Delete</button>
+                          <button onClick={() => handleDelete(transaction._id)}>🗑️</button>
                         </td>
                     </tr>
                     ))}

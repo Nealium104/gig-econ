@@ -1,5 +1,6 @@
 import Nav from '@/components/Nav'
 import InputForm from '@/components/InputForm'
+import Footer from '@/components/Footer'
 import Conditional from '@/components/shared/Conditional'
 import Totals from '@/components/Totals'
 import { useState } from 'react'
@@ -17,6 +18,8 @@ export default function Home() {
   const [value, setValue] = useState(new Date());
   const { user, error, isLoading } = useUser()
 
+  const sid = user ? user.sub : '';
+
   function onChange(nextValue) {
     setValue(nextValue);
   }
@@ -26,53 +29,52 @@ export default function Home() {
   }
 
   return (
-    <main className="bg-neutral h-screen">
+    <main className="bg-neutral h-screen w-screen">
       <Nav />
-      <div className='w-1/2'>
-      </div>
       <div className="max-width-l">
-        <h1 className='text-5xl text-primary font-bold bg-base-100 w-fit p-5 rounded-xl my-5 mx-auto'>Count your cash!</h1>
-        <div className='w-3/4 mx-auto mb-8'>
+        <h1 className='text-5xl text-primary font-bold bg-base-100 w-fit p-5 rounded-xl my-5 mx-auto'>{`Welcome ${sid}, to Gig-econ!`}</h1>
+        <div className='max-w-md mx-auto mb-8'>
           <div className='flex ms-4'>
             <button 
-              className={`rounded-t-lg px-4 py-3 mx-1 ${selectedTab === TABS.HOME ? 'bg-base-100' : 'bg-black'}`} 
+              className={`rounded-t-lg px-4 py-3 mx-1 ${selectedTab === TABS.HOME ? 'bg-base-100' : 'bg-base-300'}`} 
               onClick={() => handleButtonClick(TABS.HOME)}
             >
               Home
             </button>
             <button 
-              className={`rounded-t-lg px-4 py-3 mx-1 ${selectedTab === TABS.CALCULATOR ? 'bg-base-100' : 'bg-black'}`}
+              className={`rounded-t-lg px-4 py-3 mx-1 ${selectedTab === TABS.CALCULATOR ? 'bg-base-100' : 'bg-base-300'}`}
               onClick={() => handleButtonClick(TABS.CALCULATOR)}
             >
               Calculator
             </button>
             <button 
-              className={`rounded-t-lg px-4 py-3 mx-1 ${selectedTab === TABS.LOGS ? 'bg-base-100' : 'bg-black'}`} 
+              className={`rounded-t-lg px-4 py-3 mx-1 ${selectedTab === TABS.LOGS ? 'bg-base-100' : 'bg-base-300'}`} 
               onClick={() => handleButtonClick(TABS.LOGS)}
             >
-              Your Logs
+              Logs
             </button>
             <button 
-              className={`rounded-t-lg px-4 py-3 mx-1 ${selectedTab === TABS.GROUPS ? 'bg-base-100' : 'bg-black'}`} 
+              className={`rounded-t-lg px-4 py-3 mx-1 ${selectedTab === TABS.GROUPS ? 'bg-base-100' : 'bg-base-300'}`} 
               onClick={() => handleButtonClick(TABS.GROUPS)}
             >
-              Your Groups
+              Groups
             </button>
           </div>
-          <div className="bg-base-100 rounded-xl p-5 text-center mx-auto">
-            <h3 className='text-xl font-bold text-secondary'>If this is your first time at freelance funds, check out the FAQ. Otherwise, use the calculator below or check your current logs</h3>
-            <h2>Click the calculator to just use the calculator, or Login to access your past sessions!</h2>
+          <div className="bg-base-100 rounded-xl p-5 text-center mx-auto h-fit">
+            <Conditional className="py-4" showWhen={selectedTab === TABS.HOME}>
+              <h3 className='text-xl font-bold text-secondary'>If this is your first time at Gig-Econ, check out the FAQ. Otherwise, use the calculator below or check your current logs</h3>
+              <h2>Click the calculator to just use the calculator, or Login to access your past sessions!</h2>
+            </Conditional>
+            <Conditional className="py-4" showWhen={selectedTab === TABS.CALCULATOR}>
+              <InputForm />
+            </Conditional>
+            <Conditional className="py-4" showWhen={selectedTab === TABS.LOGS}>
+              <Totals />
+            </Conditional>
           </div>
         </div>
-        <div className=''>
-          <Conditional className="py-4" showWhen={selectedTab === TABS.CALCULATOR}>
-            <InputForm />
-          </Conditional>
-          <Conditional className="py-4" showWhen={selectedTab === TABS.LOGS}>
-            <Totals />
-          </Conditional>
-        </div>
       </div>
+      <Footer />
     </main>
   )
 }

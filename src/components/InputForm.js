@@ -50,7 +50,7 @@ export default function InputForm() {
       <div className="flex justify-center pb-5">
         <div className="card w-96 bg-black/25 shadow-xl">
           <form className="card-body" id="transaction-form" onSubmit={handleSubmit}>
-            <h2 className="card-title justify-center">Count your money!</h2>
+            <h2 className="card-title justify-center text-secondary text-4xl">Count your money!</h2>
             <p className="bg-black/50 rounded-lg p-5">Count your number of dollar bills in order. Press enter and watch your total update! Press submit to log the date of your money!</p>
             <label htmlFor="100">$100</label>
             <input
