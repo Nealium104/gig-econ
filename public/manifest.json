@@ -14,7 +14,9 @@
   "icons": [
     {
       "src": "/logo512.png",
-      "type": "image/x-icon"
+      "type": "image/png",
+      "sizes": "512x512",
+      "purpose": "any"
     }
   ],
   "shortcuts": []
