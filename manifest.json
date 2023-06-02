@@ -1,21 +1,21 @@
 {
-    "name": "Gig-Econ",
-    "short_name": "Gig-Econ",
-    "start_url": "_app.js",
-    "scope": "./",
-    "icons": [
-      {
-        "src": "/images/logo192.png",
-        "sizes": "192x192",
-        "type": "image/png"
-      },
-      {
-        "src": "/images/logo512.png",
-        "sizes": "512x512",
-        "type": "image/png"
-      }
-    ],
-    "theme_color": "#ffd31d",
-    "background_color": "#333",
-    "display": "standalone"
-  }
+  "background_color": "#ffffff",
+  "description": "Gig-Econ is a way to track your cash-only jobs like serving or music performance.",
+  "dir": "ltr",
+  "display": "standalone",
+  "name": "Gig-Econ",
+  "orientation": "any",
+  "scope": "/",
+  "short_name": "Gig-Econ",
+  "start_url": "/",
+  "theme_color": "#ffffff",
+  "categories": [],
+  "screenshots": [],
+  "icons": [
+    {
+      "src": "/favicon.ico",
+      "type": "image/x-icon"
+    }
+  ],
+  "shortcuts": []
+}
