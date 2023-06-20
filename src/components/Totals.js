@@ -59,7 +59,7 @@ export default function Totals () {
       function TransactionsTable({ transactions }) {
         return (
             <div className="container table mx-auto py-6 px-4">
-            <div className="overflow-x-auto">
+            <div className="">
                 <table className="w-full table-auto text-white">
                 <thead>
                     <tr className="text-white bg-black/75">
