@@ -1,9 +1,8 @@
 import Link from "next/link";
 import { useUser } from "@auth0/nextjs-auth0/client";
-import Totals from "./Totals";
 
 export default function Nav () {
-    const { user, error, isLoading } = useUser();
+    const { user } = useUser();
 
     return (
         <>
@@ -14,9 +13,7 @@ export default function Nav () {
             <div className="flex">
                 <Link href="/">Dashboard</Link>
                 <Link className='mx-4' href='/faq/'>FAQ</Link>
-                {isLoading ? (
-                    <span>Authenticating...</span>
-                    ) : user ? (
+                {user ? (
                     <a href="/api/auth/logout">Logout</a>
                     ) : (
                     <a href="/api/auth/login">Login</a>
