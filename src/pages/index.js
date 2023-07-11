@@ -63,7 +63,7 @@ export default function Home() {
           </div>
           <div className="bg-bg-200 rounded-xl p-5 text-center mx-auto h-fit">
             <Conditional className="py-4" showWhen={selectedTab === TABS.HOME}>
-              <h3 className='text-xl font-bold text-secondary'>If this is your first time at Gig-Econ, check out the FAQ. Otherwise, use the calculator below or check your current logs</h3>
+              <h3 className='text-xl font-bold text-secondary'>If this is your first time at Gig-Econ, check out the FAQ. Otherwise, click the tabs to use the calculator or check your current logs</h3>
               <h2>Click the calculator to just use the calculator, or Login to access your past sessions!</h2>
             </Conditional>
             <Conditional className="py-4" showWhen={selectedTab === TABS.CALCULATOR}>
