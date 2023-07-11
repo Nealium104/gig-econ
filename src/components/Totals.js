@@ -59,14 +59,38 @@ export default function Totals () {
 
       
       function TransactionsTable({ transactions }) {
+        // Dummy data to work on the UI
+        // const dummyData = [
+        //   {
+        //     _id: 1,
+        //     date: '2023-07-01T00:00:00.000+00:00',
+        //     amount: 100,
+        //     description: 'Groceries',
+        //   },
+        //   {
+        //     _id: 2,
+        //     date: '2023-07-02T00:00:00.000+00:00',
+        //     amount: 200,
+        //     description: 'Rent',
+        //   },
+        //   {
+        //     _id: 3,
+        //     date: '2023-07-03T00:00:00.000+00:00',
+        //     amount: 300,
+        //     description: 'Utility Bills',
+        //   },
+        // ];
+
+        // transactions = dummyData
+
         return (
           <div>
             {transactions.map((transaction) => (
-              <div className="bg-bg-300 rounded w-3/4 mx-auto my-4" key={transaction._id}>
+              <div className="bg-primary-100 rounded w-3/4 mx-auto my-4 border border-white/50 text-text-100 font-thin" key={transaction._id}>
                 <div className="flex justify-between">
                   <div>
-                    <h2>Date</h2>
-                    <span className="text-2xl">{transaction.date.split('T')[0]}</span>
+                    <h2>Date:</h2>
+                    <span className="text-lg">{transaction.date.split('T')[0]}</span>
                   </div>
                   <div className="flex">
                     <div className="m-4" onClick={() => handleEditClick(transaction._id, transaction.description, transaction.amount)}>
@@ -78,12 +102,12 @@ export default function Totals () {
                   </div>
                 </div>
                 <div className="w-full text-end">
-                  <h2>Amount:</h2>
-                  <span className="text-2xl">{transaction.amount}</span>
+                  <h2 className="mx-4">Amount:</h2>
+                  <span className="text-3xl m-4 text-text-100 font-bold">{`$${transaction.amount}`}</span>
                 </div>
                 <div className="">
-                  <h2>Description</h2>
-                  <span className="text-2xl">{transaction.description || transaction.amount}</span>
+                  <h2>Description:</h2>
+                  <span className="text-lg m-4">{transaction.description || transaction.amount}</span>
                 </div>
               </div>
             ))}
