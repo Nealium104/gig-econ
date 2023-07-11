@@ -48,75 +48,89 @@ export default function InputForm() {
   return (
     <>
       <div className="flex justify-center pb-5">
-        <div className="card w-96 bg-black/25 shadow-xl">
-          <form className="card-body" id="transaction-form" onSubmit={handleSubmit}>
-            <h2 className="card-title justify-center text-secondary text-4xl">Count your money!</h2>
-            <p className="bg-black/50 rounded-lg p-5">Count your number of dollar bills in order. Press enter and watch your total update! Press submit to log the date of your money!</p>
-            <label htmlFor="100">$100</label>
-            <input
-              type="number"
-              placeholder="Quantity of $100 bills"
-              className="input input-bordered w-full max-w-xs"
-              id="100"
-              onBlur={calculateTotal}
-            />
-            <label htmlFor="50">$50</label>
-            <input
-              type="number"
-              placeholder="Quantity of $50 bills"
-              className="input input-bordered w-full max-w-xs"
-              id="50"
-              onBlur={calculateTotal}
-            />
-            <label htmlFor="20">$20</label>
-            <input
-              type="number"
-              placeholder="Quantity of $20 bills"
-              className="input input-bordered w-full max-w-xs"
-              id="20"
-              onBlur={calculateTotal}
-            />
-            <label htmlFor="10">$10</label>
-            <input
-              type="number"
-              placeholder="Quantity of $10 bills"
-              className="input input-bordered w-full max-w-xs"
-              id="10"
-              onBlur={calculateTotal}
-            />
-            <label htmlFor="5">$5</label>
-            <input
-              type="number"
-              placeholder="Quantity of $5 bills"
-              className="input input-bordered w-full max-w-xs"
-              id="5"
-              onBlur={calculateTotal}
-            />
-            <label htmlFor="1">$1</label>
-            <input
-              type="number"
-              placeholder="Quantity of $1 bills"
-              className="input input-bordered w-full max-w-xs"
-              id="1"
-              onBlur={calculateTotal}
-            />
+        <div className="w-96">
+          <form className="" id="transaction-form" onSubmit={handleSubmit}>
+            <h2 className="justify-center text-secondary text-4xl">Count your money!</h2>
+            <p className="rounded-lg p-5">Count your number of dollar bills in order. Press enter and watch your total update! Press submit to log the date of your money!</p>
+            <div className='w-full'>
+              <div className='my-4 w-full flex justify-evenly items-center h-20 bg-primary-100 rounded shadow-xl transition duration-150 focus-within:scale-110'>
+                <label className="text-xl h-10 flex items-center" htmlFor="100">$100x</label>
+                <input
+                  type="number"
+                  placeholder="Quantity of $100 bills"
+                  className="h-10 text-xl rounded text-center"
+                  id="100"
+                  onBlur={calculateTotal}
+                />
+              </div>
+              <div className="my-4 w-full flex justify-evenly items-center h-20 bg-primary-100 rounded shadow-xl transition duration-150 focus-within:scale-110">
+                <label className="text-xl h-10 flex items-center" htmlFor="50">$50x</label>
+                <input
+                  type="number"
+                  placeholder="Quantity of $50 bills"
+                  className="h-10 text-xl rounded text-center"
+                  id="50"
+                  onBlur={calculateTotal}
+                />
+              </div>
+              <div className="my-4 w-full flex justify-evenly items-center h-20 bg-primary-100 rounded shadow-xl transition duration-150 focus-within:scale-110">
+                <label className="text-xl h-10 flex items-center" htmlFor="20">$20x</label>
+                <input
+                  type="number"
+                  placeholder="Quantity of $20 bills"
+                  className="h-10 text-xl rounded text-center"
+                  id="20"
+                  onBlur={calculateTotal}
+                />
+              </div>
+              <div className="my-4 w-full flex justify-evenly items-center h-20 bg-primary-100 rounded shadow-xl transition duration-150 focus-within:scale-110">
+                <label className="text-xl h-10 flex items-center" htmlFor="10">$10x</label>
+                <input
+                  type="number"
+                  placeholder="Quantity of $10 bills"
+                  className="h-10 text-xl rounded text-center"
+                  id="10"
+                  onBlur={calculateTotal}
+                />
+              </div>
+              <div className="my-4 w-full flex justify-evenly items-center h-20 bg-primary-100 rounded shadow-xl transition duration-150 focus-within:scale-110">
+                <label className="text-xl h-10 flex items-center" htmlFor="5">$5x</label>
+                <input
+                  type="number"
+                  placeholder="Quantity of $5 bills"
+                  className="h-10 text-xl rounded text-center"
+                  id="5"
+                  onBlur={calculateTotal}
+                />
+              </div>
+              <div className="my-4 w-full flex justify-evenly items-center h-20 bg-primary-100 rounded shadow-xl transition duration-150 focus-within:scale-110">
+                <label className="text-xl h-10 flex items-center" htmlFor="1">$1x</label>
+                <input
+                  type="number"
+                  placeholder="Quantity of $1 bills"
+                  className="h-10 text-xl rounded text-center"
+                  id="1"
+                  onBlur={calculateTotal}
+                />
+              </div>
+            </div>
             <div>
               <h3>Description (optional):</h3>
-              <input type="text" placeholder="Write a short description" className="input input-bordered w-full max-w-xs" id="description" />
+              <input type="text" placeholder="Write a short description" className="w-3/4 max-w-xs h-14 text-xl px-4" id="description" />
             </div>
             <div className="flex items-center justify-center">
               <div className='flex flex-col items-center'>
-              <div className='badge p-4 my-4 text-xl' style={{position: 'relative'}}>
-                      <span style={{position: 'absolute', left: '10px', top: '50%', transform: 'translateY(-50%)'}}>$</span>
-                      <input 
-                          className='bg-base-200'
-                          type="number"
+              <div className='p-4 my-4 text-xl relative bg-bg-200'>
+                      <p 
+                          className='text-text-100 text-4xl bg-primary-100 p-4 rounded shadow-xl'
+                          type="text"
+                          pattern="\d*"
                           value={total}
                           onChange={event => setTotal(Number(event.target.value))}
                           style={{paddingLeft: '20px'}}
-                      />
+                      >{`$ ${total}`}</p>
                   </div>
-                <button className="btn btn-primary" type="submit" disabled={!sid}>Submit</button>
+                <button className="bg-primary-100 px-4 py-2 rounded-lg shadow-xl" type="submit" disabled={!sid}>Submit</button>
               </div>
             </div>
           </form>

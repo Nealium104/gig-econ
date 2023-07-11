@@ -37,31 +37,31 @@ export default function Home() {
         <div className='max-w-lg mx-auto mb-8'>
           <div className='flex ms-4'>
             <button 
-              className={`rounded-t-lg px-4 py-3 mx-1 ${selectedTab === TABS.HOME ? 'bg-base-100' : 'bg-base-300'}`} 
+              className={`rounded-t-lg px-4 py-3 mx-1 ${selectedTab === TABS.HOME ? 'bg-bg-200' : 'bg-bg-300'}`} 
               onClick={() => handleButtonClick(TABS.HOME)}
             >
               Home
             </button>
             <button 
-              className={`rounded-t-lg px-4 py-3 mx-1 ${selectedTab === TABS.CALCULATOR ? 'bg-base-100' : 'bg-base-300'}`}
+              className={`rounded-t-lg px-4 py-3 mx-1 ${selectedTab === TABS.CALCULATOR ? 'bg-bg-200' : 'bg-bg-300'}`}
               onClick={() => handleButtonClick(TABS.CALCULATOR)}
             >
               Calculator
             </button>
             <button 
-              className={`rounded-t-lg px-4 py-3 mx-1 ${selectedTab === TABS.LOGS ? 'bg-base-100' : 'bg-base-300'}`} 
+              className={`rounded-t-lg px-4 py-3 mx-1 ${selectedTab === TABS.LOGS ? 'bg-bg-200' : 'bg-bg-300'}`} 
               onClick={() => handleButtonClick(TABS.LOGS)}
             >
               Logs
             </button>
             <button 
-              className={`rounded-t-lg px-4 py-3 mx-1 ${selectedTab === TABS.GROUPS ? 'bg-base-100' : 'bg-base-300'}`} 
+              className={`rounded-t-lg px-4 py-3 mx-1 ${selectedTab === TABS.GROUPS ? 'bg-bg-200' : 'bg-bg-300'}`} 
               onClick={() => handleButtonClick(TABS.GROUPS)}
             >
               Groups
             </button>
           </div>
-          <div className="bg-base-100 rounded-xl p-5 text-center mx-auto h-fit">
+          <div className="bg-bg-200 rounded-xl p-5 text-center mx-auto h-fit">
             <Conditional className="py-4" showWhen={selectedTab === TABS.HOME}>
               <h3 className='text-xl font-bold text-secondary'>If this is your first time at Gig-Econ, check out the FAQ. Otherwise, use the calculator below or check your current logs</h3>
               <h2>Click the calculator to just use the calculator, or Login to access your past sessions!</h2>
