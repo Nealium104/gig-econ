@@ -51,7 +51,8 @@ export default function InputForm() {
         <div className="w-96">
           <form className="" id="transaction-form" onSubmit={handleSubmit}>
             <h2 className="justify-center text-secondary text-4xl">Count your money!</h2>
-            <p className="rounded-lg p-5">Count your number of dollar bills in order. Press enter and watch your total update! Press submit to log the date of your money!</p>
+            <p className="rounded-lg p-5">Count your number of dollar bills in order. Press tab or select a new bill quantity and watch your total update! Press submit to log the date of your money!</p>
+            <span>You are {user ? 'logged in' : 'not logged in'}</span>
             <div className='w-full'>
               <div className='my-4 w-full flex justify-evenly items-center h-20 bg-primary-100 rounded shadow-xl transition duration-150 focus-within:scale-110'>
                 <label className="text-xl h-10 flex items-center" htmlFor="100">$100x</label>
