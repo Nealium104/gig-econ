@@ -103,7 +103,7 @@ export default function Totals () {
                 </div>
                 <div className="w-full text-end">
                   <h2 className="mx-4">Amount:</h2>
-                  <span className="text-3xl m-4 text-text-100 font-bold">{`$${transaction.amount}`}</span>
+                  <span className="text-3xl text-text-100 font-bold">{`$${transaction.amount}`}</span>
                 </div>
                 <div className="">
                   <h2>Description:</h2>

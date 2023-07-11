@@ -58,7 +58,7 @@ export default function InputForm() {
                 <input
                   type="number"
                   placeholder="Quantity of $100 bills"
-                  className="h-10 text-xl rounded text-center"
+                  className="h-10 text-xl rounded text-center text-black/50"
                   id="100"
                   onBlur={calculateTotal}
                 />
@@ -68,7 +68,7 @@ export default function InputForm() {
                 <input
                   type="number"
                   placeholder="Quantity of $50 bills"
-                  className="h-10 text-xl rounded text-center"
+                  className="h-10 text-xl rounded text-center text-black/50"
                   id="50"
                   onBlur={calculateTotal}
                 />
@@ -78,7 +78,7 @@ export default function InputForm() {
                 <input
                   type="number"
                   placeholder="Quantity of $20 bills"
-                  className="h-10 text-xl rounded text-center"
+                  className="h-10 text-xl rounded text-center text-black/50"
                   id="20"
                   onBlur={calculateTotal}
                 />
@@ -88,7 +88,7 @@ export default function InputForm() {
                 <input
                   type="number"
                   placeholder="Quantity of $10 bills"
-                  className="h-10 text-xl rounded text-center"
+                  className="h-10 text-xl rounded text-center text-black/50"
                   id="10"
                   onBlur={calculateTotal}
                 />
@@ -98,7 +98,7 @@ export default function InputForm() {
                 <input
                   type="number"
                   placeholder="Quantity of $5 bills"
-                  className="h-10 text-xl rounded text-center"
+                  className="h-10 text-xl rounded text-center text-black/50"
                   id="5"
                   onBlur={calculateTotal}
                 />
@@ -108,7 +108,7 @@ export default function InputForm() {
                 <input
                   type="number"
                   placeholder="Quantity of $1 bills"
-                  className="h-10 text-xl rounded text-center"
+                  className="h-10 text-xl rounded text-center text-black/50"
                   id="1"
                   onBlur={calculateTotal}
                 />
@@ -116,13 +116,13 @@ export default function InputForm() {
             </div>
             <div>
               <h3>Description (optional):</h3>
-              <input type="text" placeholder="Write a short description" className="w-3/4 max-w-xs h-14 text-xl px-4" id="description" />
+              <input type="text" placeholder="Write a short description" className="text-black/50 w-3/4 max-w-xs h-14 text-xl px-4" id="description" />
             </div>
             <div className="flex items-center justify-center">
               <div className='flex flex-col items-center'>
               <div className='p-4 my-4 text-xl relative bg-bg-200'>
                       <p 
-                          className='text-text-100 text-4xl bg-primary-100 p-4 rounded shadow-xl'
+                          className='text-text-100 text-4xl bg-primary-100 px-6 py-2 rounded shadow-xl'
                           type="text"
                           pattern="\d*"
                           value={total}
@@ -130,7 +130,7 @@ export default function InputForm() {
                           style={{paddingLeft: '20px'}}
                       >{`$ ${total}`}</p>
                   </div>
-                <button className="bg-primary-100 px-4 py-2 rounded-lg shadow-xl" type="submit" disabled={!sid}>Submit</button>
+                <button className="bg-primary-100 text-2xl px-4 py-2 rounded-lg shadow-xl" type="submit" disabled={!sid}>Submit</button>
               </div>
             </div>
           </form>
