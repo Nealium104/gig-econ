@@ -1,6 +1,6 @@
 # Hi there!
 
-This is a money counter web application. It uses next.js, tailwind, daisyUI, and mongoDB. Currently, it's just a calculator, but the rest of the application is under development.
+This is a money counter web application. It uses next.js, tailwind, and mongoDB. Currently, it's just a calculator, but the rest of the application is under development.
 
 ## Installation
 
@@ -9,7 +9,7 @@ Use npm i to install the dependencies and have fun!
 npm i 
 ```
 ## Usage
-You can use the live version at https://money-counter-gamma.vercel.app/, or you can install it from the repository and run it locally with
+You can use the live version at https://gig-econ.vercel.app/, or you can install it from the repository and run it locally with
 ```bash
 npm run dev
 ```
