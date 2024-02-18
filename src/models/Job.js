@@ -5,7 +5,7 @@ const JobSchema = new mongoose.Schema({
     userID: {
         type: mongoose.Schema.Types.ObjectId,
         required: true,
-        ref: 'User' // Assuming you have a User model
+        ref: 'User'
     },
     jobName: {
         type: String,
