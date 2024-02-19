@@ -1,10 +1,7 @@
 export default function Transaction({ transaction }) {
   return (
     <div>
-      <div
-        className="w-3/4 mx-auto my-4 font-thin border rounded bg-primary-100 border-white/50 text-text-100"
-        key={transaction._id}
-      >
+      <div className="w-3/4 mx-auto my-4 font-thin border rounded bg-primary-100 border-white/50 text-text-100">
         <div className="flex justify-between">
           <div>
             <h2>Date:</h2>
