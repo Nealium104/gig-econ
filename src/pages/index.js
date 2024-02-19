@@ -32,7 +32,7 @@ export default function Home() {
       <Nav />
       <div className="max-width-l">
         <h1 className="p-5 mx-auto my-5 text-5xl font-bold text-primary bg-base-100 w-fit rounded-xl">
-          Welcome{user?.name ? ` ${user.name},` : ""} to Gig-Econ!
+          Welcome{user?.name ? ` ${user.name}` : ""}, to Gig-Econ!
         </h1>
         <div className="max-w-lg mx-auto mb-8">
           <div className="flex ms-4">
