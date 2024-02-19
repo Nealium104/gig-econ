@@ -76,11 +76,9 @@ export default function Totals() {
         <h1 className="mb-6 text-2xl font-semibold text-center">Your Logs</h1>
         <div className="overflow-x-auto">
           {user ? (
-            transactions
-              .sort((a, b) => new Date(a.date) - new Date(b.date))
-              .map((transaction) => (
-                <Transaction key={transaction._id} transactions={transaction} />
-              ))
+            transactions.map((transaction) => (
+              <Transaction key={transaction._id} transactions={transaction} />
+            ))
           ) : (
             <div>
               <p className="text-xl text-center">
