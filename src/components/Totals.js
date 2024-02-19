@@ -79,7 +79,7 @@ export default function Totals() {
             transactions.map((transaction) => (
               <Transaction
                 key={transaction._id}
-                transactions={transaction}
+                transaction={transaction}
                 handleDelete={handleDelete}
                 handleEditClick={handleEditClick}
               />
