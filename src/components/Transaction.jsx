@@ -8,9 +8,7 @@ export default function Transaction({ transaction }) {
         <div className="flex justify-between">
           <div>
             <h2>Date:</h2>
-            <span className="text-lg">
-              {transaction.date.ToISOString().split("T")[0]}
-            </span>
+            <span className="text-lg">{transaction.date}</span>
           </div>
           <div className="flex">
             <div
