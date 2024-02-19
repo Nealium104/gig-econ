@@ -1,11 +1,15 @@
-export default function Transaction({ transaction }) {
+export default function Transaction({
+  transaction,
+  handleDelete,
+  handleEditClick,
+}) {
   return (
     <div>
       <div className="w-3/4 mx-auto my-4 font-thin border rounded bg-primary-100 border-white/50 text-text-100">
         <div className="flex justify-between">
           <div>
             <h2>Date:</h2>
-            <span className="text-lg">{transaction.date.split("T")[0]}</span>
+            <span className="text-lg">{transaction.date?.split("T")[0]}</span>
           </div>
           <div className="flex">
             <div
