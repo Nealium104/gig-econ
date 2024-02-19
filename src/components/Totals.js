@@ -77,7 +77,12 @@ export default function Totals() {
         <div className="overflow-x-auto">
           {user ? (
             transactions.map((transaction) => (
-              <Transaction key={transaction._id} transactions={transaction} />
+              <Transaction
+                key={transaction._id}
+                transactions={transaction}
+                handleDelete={handleDelete}
+                handleEditClick={handleEditClick}
+              />
             ))
           ) : (
             <div>
