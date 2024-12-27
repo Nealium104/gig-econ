@@ -3,6 +3,7 @@ export default function Transaction({
   handleDelete,
   handleEditClick,
 }) {
+  console.log(transaction.date);
   return (
     <div>
       <div className="w-3/4 mx-auto my-4 font-thin border rounded bg-primary-100 border-white/50 text-text-100">
@@ -10,7 +11,7 @@ export default function Transaction({
           <div>
             <h2>Date:</h2>
             <span className="text-lg">
-              {transaction.date?.split("T")[0] ?? "No Date"}
+              {/* {transaction.date?.split("T")[0] ?? "No Date"} */}
             </span>
           </div>
           <div className="flex">
