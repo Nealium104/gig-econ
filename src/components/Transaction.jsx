@@ -1,3 +1,5 @@
+import { IoBuild } from "react-icons/io5";
+
 export default function Transaction({
   transaction,
   handleDelete,
