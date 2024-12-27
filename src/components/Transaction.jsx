@@ -1,4 +1,4 @@
-import { IoBuild } from "react-icons/io5";
+import { IoBuild, IoTrash } from "react-icons/io5";
 
 export default function Transaction({
   transaction,
