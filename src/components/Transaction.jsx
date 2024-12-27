@@ -10,7 +10,7 @@ export default function Transaction({
           <div>
             <h2>Date:</h2>
             <span className="text-lg">
-              {transaction.date ? transaction.date.split("T")[0] : "No Date"}
+              {transaction.date?.split("T")[0] ?? "No Date"}
             </span>
           </div>
           <div className="flex">
